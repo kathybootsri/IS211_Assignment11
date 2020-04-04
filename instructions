@@ -1,0 +1,1 @@
+To push to the local web host, I used the an Anaconda prompt to "set FLASK_APP=shopping_list", then set "FLASK_ENV=development" then "flask run," which made it accessible at http://127.0.0.1:5000/.
