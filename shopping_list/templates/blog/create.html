@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}New Task{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="task">Task</label>
+    <input name="task" id="task" value="{{ request.form['task'] }}" required>
+    
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" value="{{ request.form['email'] }}" required>
+    
+    <label for="priority">Priority</label>
+      <select id="priority" name="priority" required>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+      </select>
+
+
+    <input type="submit" value="Save">
+  </form>
+{% endblock %}

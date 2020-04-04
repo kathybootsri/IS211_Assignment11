@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+  <form method="post">
+    <label for="task">Task</label>
+    <input name="task" id="task" value="{{ request.form['task'] or post[1] }}" required>    
+    <label for="email">Email</label>
+    <input name="email" id="email" value="{{ request.form['email'] or post[2] }}" required>   
+   
+    <label for="priority">Priority</label>
+      <select id="priority" name="priority" required>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+      </select>
+
+  
+    </textarea>    
+    <input type="submit" value="Save">
+  </form>
+  <hr>
+  <form action="{{ url_for('delete', id=post[0])}}" method="post">
+    <input class="danger" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
+  </form>
+{% endblock %}

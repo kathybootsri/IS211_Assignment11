@@ -1,0 +1,18 @@
+<!doctype html>
+<title>{% block title %}{% endblock %} - Shopping List</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<nav>
+  <h1>To Do List</h1>
+  <ul>
+    <li><a href="{{ url_for('create') }}">Create Task</a>
+    <li><a href="{{ url_for('clear_all') }}" onclick="return confirm('Are you sure?');" class="danger">Clear All Tasks</a>
+  </ul>
+</nav>
+  <header>
+    {% block header %}{% endblock %}
+  </header>
+
+  {% block content %}
+
+  {% endblock %}
+
